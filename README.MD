@@ -1,4 +1,4 @@
-# Job Tracker Dashboard
+# MERN Job Tracker Dashboard
 
 #### npm installs backend
 
