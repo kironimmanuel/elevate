@@ -11,6 +11,7 @@ import notFoundMiddleware from './middleware/not-found.js'
 // Since we are using ES& modules, dirname is not accessible by default
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 // Security
 import mongoSanitize from 'express-mongo-sanitize'
