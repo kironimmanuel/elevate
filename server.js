@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 import mongoSanitize from 'express-mongo-sanitize'
 // import rateLimit from 'express-rate-limit'
 import helmet from 'helmet'
-import xss from 'xss'
+import xss from 'xss-clean'
 
 // Option for entire application
 // const limiter = rateLimit({
