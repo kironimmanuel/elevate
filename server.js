@@ -48,7 +48,7 @@ app.use(xss())
 
 // For deployment, we serve the production ready build folder
 app.use(express.static(path.resolve(__dirname, './client/build')))
-app.use('/api/v1/auth', limiter, authRouter)
+app.use('/api/v1/auth', authRouter)
 // All job routes need auth, authenticateUser in front will apply to all job routes
 app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
