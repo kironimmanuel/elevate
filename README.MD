@@ -1,4 +1,4 @@
-# Jobify
+# MERN Job Tracker Dashboard
 
 #### npm installs backend
 
