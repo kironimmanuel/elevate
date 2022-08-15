@@ -159,6 +159,6 @@ let navigate = useNavigate()
 
 populate mongoDb with data
 
-#### Aggregation Pipeline mongoDB
+#### Aggregation Pipeline with mongoDB
 
 The aggregation pipeline refers to a specific flow of operations that processes, transforms, and returns results. In a pipeline, successive operations are informed by the previous result. In the above example, input refers to one or more documents.
