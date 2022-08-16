@@ -35,7 +35,7 @@ const Job = ({
         <div className="content-center">
           <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
           <JobInfo icon={<FaCalendarAlt />} text={date} />
-          <JobInfo icon={<FaBriefcase />} text={position} />
+          <JobInfo icon={<FaBriefcase />} text={jobType} />
           <div className={`status ${status}`}>
             {status === 'interview' && (
               <span>
