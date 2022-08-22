@@ -41,7 +41,7 @@ const Wrapper = styled.aside`
     cursor: pointer;
   }
   .nav-links {
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
   }
@@ -60,7 +60,7 @@ const Wrapper = styled.aside`
     color: var(--primary-500);
   }
   .icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-right: 1rem;
     display: grid;
     place-items: center;

@@ -23,6 +23,7 @@ import {
   SET_EDIT_JOB,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  TOGGLE_MODAL,
   TOGGLE_SIDEBAR,
   UPDATE_USER_BEGIN,
   UPDATE_USER_ERROR,
@@ -39,6 +40,7 @@ const themeSetting = localStorage.getItem('themeSetting')
 export const initialState = {
   isLoading: false,
   showSidebar: false,
+  showModal: false,
   user: user ? JSON.parse(user) : null,
   userLocation: userLocation || '',
   token: token,
@@ -84,6 +86,8 @@ const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState('light-theme')
   // Reducer approach, instead of useState()
   const [state, dispatch] = useReducer(reducer, initialState)
+  // Job id for modal
+  const [deleteJobId, setDeleteJobId] = useState('')
 
   // Axios instance 🗯
   const authFetch = axios.create({
@@ -143,6 +147,10 @@ const AppProvider = ({ children }) => {
   // Sidebar 🗯
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR })
+  }
+  // Modal 🗯
+  const toggleModal = () => {
+    dispatch({ type: TOGGLE_MODAL })
   }
 
   // Handle change 🗯
@@ -380,6 +388,9 @@ const AppProvider = ({ children }) => {
         alertWarn,
         alertDanger,
         alertInfo,
+        toggleModal,
+        deleteJobId,
+        setDeleteJobId,
       }}>
       {children}
     </AppContext.Provider>

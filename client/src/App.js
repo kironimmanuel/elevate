@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Bounce, Flip, Slide, ToastContainer, Zoom } from 'react-toastify'
+import { ToastContainer, Zoom } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Error, Landing, ProtectedRoute, Register } from './pages'
 import {
@@ -40,6 +40,8 @@ function App() {
         draggablePercent={80}
         pauseOnHover={false}
         transition={Zoom}
+        hideProgressBar
+        closeOnClick
       />
     </BrowserRouter>
   )

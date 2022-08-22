@@ -215,7 +215,7 @@ ul {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--primary-500);
+  background: var(--primary-800);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -229,6 +229,7 @@ ul {
   background: var(--primary-900);
   box-shadow: var(--shadow-3);
 }
+
 .btn-hipster {
   color: var(--primary-500);
   background: var(--primary-200);
@@ -237,43 +238,41 @@ ul {
   color: var(--primary-200);
   background: var(--primary-900);
 }
+
 .btn-block {
   width: 100%;
 }
+
 .btn-hero {
   font-size: 1.25rem;
   padding: 0.5rem 1.25rem;
 }
+
 .btn-danger {
   background: var(--grey-500);
 }
-
 .btn-danger:hover {
-  background: var(--grey-800);
+  background: var(--grey-600);
 }
 
-.alert {
-  padding: 0.375rem 0.75rem;
-  margin-bottom: 1rem;
-  border-color: transparent;
-  border-radius: var(--borderRadius);
-  text-align: center;
-  letter-spacing: var(--letterSpacing);
+.theme-btn {
+  position: absolute;
+  display: block !important;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: var(--primary-900);
+  text-transform: uppercase;
+  transition: var(--transition);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  bottom: 2rem;
+  margin-right: 50rem;
 }
-
-.alert-danger {
-  color: var(--red-dark);
-  background: var(--red-light);
+.theme-btn:hover {
+  background-color: var(--primary-900);
 }
-.alert-attention {
-  color: var(--yellow-dark);
-  background: var(--yellow-light);
-}
-.alert-success {
-  color: var(--green-dark);
-  background: var(--green-light);
-}
-
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
@@ -398,6 +397,11 @@ input[type='number']::-webkit-outer-spin-button {
   .coffee-info span {
     display: inline-block;
     margin-right: 0.5rem;
+  }
+  .theme-btn {
+    position: fixed;
+    bottom: 0 !important;
+    margin: 3.5rem !important;
   }
 }
 

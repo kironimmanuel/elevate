@@ -1,5 +1,10 @@
 import { nanoid } from 'nanoid'
-import { FcBriefcase, FcCalendar, FcClock } from 'react-icons/fc'
+import {
+  FcBriefcase,
+  FcCalendar,
+  FcClock,
+  FcFilingCabinet,
+} from 'react-icons/fc'
 import { GiCancel } from 'react-icons/gi'
 import Wrapper from '../assets/wrappers/StatsContainer'
 import { useAppContext } from '../context/appContext'
@@ -36,7 +41,7 @@ const StatsContainer = () => {
       title: 'total applications',
       count:
         (stats.pending || 0) + (stats.interview || 0) + (stats.declined || 0),
-      icon: <FcBriefcase />,
+      icon: <FcFilingCabinet />,
       color: '#575756',
       bcg: '#d9dad7',
     },

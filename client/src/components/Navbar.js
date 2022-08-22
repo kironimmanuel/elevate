@@ -33,25 +33,37 @@ const Navbar = () => {
           {showSidebar ? <FcNext /> : <FcPrevious />}
         </button>
         <div>
-          <Logo />
+          {/* <Logo /> */}
           <h3 className="logo-text">dashboard</h3>
         </div>
-        <div className="btn-container">
-          <button
-            type="button"
-            className="btn"
-            onClick={() => setShowLogout(!showLogout)}
-            // onMouseEnter={() => setShowLogout(true)}
-            // onMouseLeave={() => setShowLogout(false)}
-          >
-            <FaUserCircle />
-            {user?.name}
-            <FaCaretDown />
-          </button>
-          <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
-            <button type="button" className="dropdown-btn" onClick={logoutUser}>
+        <div className="user-info">
+          <h5>Welcome, {user?.name}</h5>
+          <div className="btn-container">
+            <button
+              type="button"
+              className="btn btn-logout"
+              onClick={logoutUser}>
               logout
             </button>
+            {/* <button
+              type="button"
+              className="btn"
+              onClick={() => setShowLogout(!showLogout)}
+              // onMouseEnter={() => setShowLogout(true)}
+              // onMouseLeave={() => setShowLogout(false)}
+            >
+              <FaUserCircle />
+              {user?.name}
+              <FaCaretDown />
+            </button>
+            <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
+              <button
+                type="button"
+                className="dropdown-btn"
+                onClick={logoutUser}>
+                logout
+              </button>
+            </div> */}
           </div>
         </div>
       </div>

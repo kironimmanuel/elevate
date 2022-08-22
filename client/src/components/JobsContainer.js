@@ -22,6 +22,7 @@ const JobsContainer = () => {
 
   useEffect(() => {
     getJobs()
+    // eslint-disable-next-line
   }, [search, searchStatus, searchType, sort, numOfEntries, page])
 
   if (isLoading) {
@@ -40,7 +41,7 @@ const JobsContainer = () => {
   return (
     <Wrapper>
       <h5>
-        {totalJobs} job{jobs.length > 1 && 's'} found
+        {totalJobs} job entr{jobs.length > 1 ? 'ies' : 'y'} found
       </h5>
       <div className="jobs">
         {jobs.map(job => {

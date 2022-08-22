@@ -16,16 +16,18 @@ const Job = ({
   status,
   createdAt,
 }) => {
-  const { setEditJob, deleteJob } = useAppContext()
+  const { setEditJob, toggleModal, setDeleteJobId } = useAppContext()
   const date = moment(createdAt).format('LLL')
+
+  const openModal = id => {
+    setDeleteJobId(id)
+    toggleModal()
+  }
 
   return (
     <Wrapper>
       <header>
         <div className="main-icon">{company.charAt(0)}</div>
-        {/* <div className="main-icon">
-          <FcGoogle />
-        </div> */}
         <div className="info">
           <h5>{position}</h5>
           <p>{company}</p>
@@ -68,7 +70,7 @@ const Job = ({
             <button
               type="button"
               className="btn delete-btn"
-              onClick={() => deleteJob(_id)}>
+              onClick={() => openModal(_id)}>
               delete
             </button>
           </div>

@@ -1,12 +1,14 @@
 import {
-  FcBusiness,
-  FcBusinessContact,
+  FcAddRow,
   FcComboChart,
-  FcPlus,
+  FcDocument,
+  FcList,
   FcSettings,
 } from 'react-icons/fc'
+import { GiHoneypot } from 'react-icons/gi'
+import { SiGlassdoor, SiIndeed, SiMonster } from 'react-icons/si'
 
-const links = [
+export const links = [
   {
     text: 'stats',
     path: '/',
@@ -15,17 +17,17 @@ const links = [
   {
     text: 'all jobs',
     path: 'all-jobs',
-    icon: <FcBusiness />,
+    icon: <FcList />,
   },
   {
     text: 'add job',
     path: 'add-job',
-    icon: <FcPlus />,
+    icon: <FcAddRow />,
   },
   {
     text: 'profile',
     path: 'profile',
-    icon: <FcBusinessContact />,
+    icon: <FcDocument />,
   },
   {
     text: 'settings',
@@ -34,4 +36,29 @@ const links = [
   },
 ]
 
-export default links
+export const externalLinks = [
+  {
+    id: 1,
+    text: 'indeed',
+    url: 'https://de.indeed.com/',
+    icon: <SiIndeed />,
+  },
+  {
+    id: 2,
+    text: 'glassdoor',
+    url: 'https://www.glassdoor.de/index.htm',
+    icon: <SiGlassdoor />,
+  },
+  // {
+  //   id: 3,
+  //   text: 'honeypot',
+  //   url: 'https://www.honeypot.io/en/',
+  //   icon: <GiHoneypot />,
+  // },
+  // {
+  //   id: 4,
+  //   text: 'monster',
+  //   url: 'https://www.monster.de/',
+  //   icon: <SiMonster />,
+  // },
+]
