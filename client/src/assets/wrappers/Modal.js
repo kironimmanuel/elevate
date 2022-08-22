@@ -24,6 +24,8 @@ const Wrapper = styled.div`
   .modal h4 {
     margin-bottom: 0;
     line-height: 1.5;
+    font-size: 1.1rem;
+    text-transform: none;
   }
   .modal .clear-btn,
   .modal .confirm-btn {

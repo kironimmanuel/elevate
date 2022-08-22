@@ -1,18 +1,18 @@
 import Wrapper from '../assets/wrappers/Modal'
 import { useAppContext } from '../context/appContext'
 
-const Modal = () => {
-  const { deleteJob, toggleModal, deleteJobId: id } = useAppContext()
+const ModalArchive = () => {
+  const { alertDanger, toggleArchiveModal } = useAppContext()
 
   const closeModal = arg => {
-    deleteJob(id)
-    toggleModal()
+    toggleArchiveModal()
+    alertDanger('Test user, no touchy only looky ☝')
   }
   return (
     <Wrapper>
       <aside className="modal-container">
         <div className="modal">
-          <h4>Are you sure you want to remove the job entry?</h4>
+          <h4>Are you sure you want to archive this job?</h4>
           <div className="btn-container">
             <button type="button" className="btn" onClick={closeModal}>
               confirm
@@ -20,7 +20,7 @@ const Modal = () => {
             <button
               type="button"
               className="btn cancel-btn"
-              onClick={toggleModal}>
+              onClick={toggleArchiveModal}>
               cancel
             </button>
           </div>
@@ -29,4 +29,4 @@ const Modal = () => {
     </Wrapper>
   )
 }
-export default Modal
+export default ModalArchive

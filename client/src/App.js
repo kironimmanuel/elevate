@@ -5,6 +5,7 @@ import { Error, Landing, ProtectedRoute, Register } from './pages'
 import {
   AddJob,
   AllJobs,
+  Archive,
   Profile,
   Settings,
   SharedLayout,
@@ -15,7 +16,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Nested routes */}
         <Route
           path="/"
           element={
@@ -27,6 +27,7 @@ function App() {
           <Route path="all-jobs" element={<AllJobs />} />
           <Route path="add-job" element={<AddJob />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="archive" element={<Archive />} />
           <Route path="settings" element={<Settings />} />
         </Route>
 

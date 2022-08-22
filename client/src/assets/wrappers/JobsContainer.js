@@ -20,5 +20,12 @@ const Wrapper = styled.section`
       gap: 1rem;
     }
   }
+  @media (min-width: 1600px) {
+    .jobs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+  }
 `
 export default Wrapper

@@ -23,6 +23,7 @@ import {
   SET_EDIT_JOB,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  TOGGLE_ARCHIVE_MODAL,
   TOGGLE_MODAL,
   TOGGLE_SIDEBAR,
   UPDATE_USER_BEGIN,
@@ -41,6 +42,7 @@ export const initialState = {
   isLoading: false,
   showSidebar: false,
   showModal: false,
+  showArchiveModal: false,
   user: user ? JSON.parse(user) : null,
   userLocation: userLocation || '',
   token: token,
@@ -66,8 +68,8 @@ export const initialState = {
   totalJobs: 0,
   page: 1,
   numOfPages: 1,
-  numOfEntries: 10,
-  numOfEntriesOptions: [10, 20, 50],
+  numOfEntries: 12,
+  numOfEntriesOptions: [12, 24, 48],
   search: '',
   searchStatus: 'all',
   searchType: 'all',
@@ -75,6 +77,8 @@ export const initialState = {
   sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
   themeSetting: themeSetting || 'light-theme',
   themeSettingOptions: ['light-theme', 'dark-theme'],
+  language: 'english',
+  languageOptions: ['english', 'german', 'france', 'spanish', 'chinese'],
   customId: 'custom-id-yes',
 }
 
@@ -148,9 +152,13 @@ const AppProvider = ({ children }) => {
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR })
   }
+
   // Modal 🗯
   const toggleModal = () => {
     dispatch({ type: TOGGLE_MODAL })
+  }
+  const toggleArchiveModal = () => {
+    dispatch({ type: TOGGLE_ARCHIVE_MODAL })
   }
 
   // Handle change 🗯
@@ -391,6 +399,7 @@ const AppProvider = ({ children }) => {
         toggleModal,
         deleteJobId,
         setDeleteJobId,
+        toggleArchiveModal,
       }}>
       {children}
     </AppContext.Provider>

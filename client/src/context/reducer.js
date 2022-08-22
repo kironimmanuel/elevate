@@ -20,6 +20,7 @@ import {
   SET_EDIT_JOB,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  TOGGLE_ARCHIVE_MODAL,
   TOGGLE_MODAL,
   TOGGLE_SIDEBAR,
   UPDATE_USER_BEGIN,
@@ -63,6 +64,12 @@ const reducer = (state, action) => {
     return {
       ...state,
       showModal: !state.showModal,
+    }
+  }
+  if (action.type === TOGGLE_ARCHIVE_MODAL) {
+    return {
+      ...state,
+      showArchiveModal: !state.showArchiveModal,
     }
   }
 

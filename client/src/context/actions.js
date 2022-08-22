@@ -6,6 +6,7 @@
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 // Modal
 export const TOGGLE_MODAL = 'TOGGLE_MODAL'
+export const TOGGLE_ARCHIVE_MODAL = 'TOGGLE_ARCHIVE_MODAL'
 
 // Handle change
 export const HANDLE_CHANGE = 'HANDLE_CHANGE'

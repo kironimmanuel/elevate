@@ -17,7 +17,6 @@ const Wrapper = styled.article`
       letter-spacing: 0;
     }
   }
-
   .main-icon {
     width: 60px;
     height: 60px;
@@ -43,16 +42,16 @@ const Wrapper = styled.article`
     }
   }
   .pending {
-    background: #fcefc7;
-    color: #e9b949;
+    background: #fdf4ce;
+    color: #a38233;
   }
   .interview {
-    background: #e0e8f9;
+    background: #d1e8ff;
     color: #647acb;
   }
   .declined {
-    color: #d66a6a;
-    background: #ffeeee;
+    background: #faeded;
+    color: #804040;
   }
   .content {
     padding: 1rem 1.5rem;
@@ -71,7 +70,6 @@ const Wrapper = styled.article`
       grid-template-columns: 1fr 1fr;
     }
   }
-
   .status {
     border-radius: var(--borderRadius);
     text-transform: capitalize;
@@ -92,19 +90,23 @@ const Wrapper = styled.article`
     margin-top: 1rem;
   }
   .edit-btn,
-  .delete-btn {
+  .delete-btn,
+  .archive-btn {
     letter-spacing: var(--letterSpacing);
     cursor: pointer;
-    height: 30px;
+    font-size: 0.8rem;
+    height: 27px;
   }
   .edit-btn {
-    color: var(--green-dark);
-    background: var(--green-light);
+    background: var(--grey-400);
     margin-right: 0.5rem;
   }
   .delete-btn {
-    color: var(--red-dark);
-    background: var(--red-light);
+    background: var(--grey-400);
+    margin-right: 0.5rem;
+  }
+  .archive-btn {
+    background: var(--grey-400);
   }
   &:hover .actions {
     visibility: visible;

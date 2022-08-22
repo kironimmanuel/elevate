@@ -53,7 +53,7 @@ const Wrapper = styled.aside`
       transition: var(--transition);
     }
     .active {
-      color: var(--primary-100);
+      color: #ffffff;
       background: var(--primary-900);
     }
     .active .icon {

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { FaLightbulb, FaMoon } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import { useAppContext } from '../context/appContext'
-import { externalLinks, links } from '../utils/links'
+import { links } from '../utils/links'
 
 // Pass toggleSidebar as prop, since we only close the sidebar when clicking links on the small sidebar
 const NavLinks = ({ toggleSidebar }) => {
@@ -20,7 +20,6 @@ const NavLinks = ({ toggleSidebar }) => {
   useEffect(() => {
     // It targets the whole DOM, easy light/darkmode setup
     document.documentElement.className = theme
-    // console.log(document.documentElement)
   }, [theme])
 
   return (
@@ -39,23 +38,6 @@ const NavLinks = ({ toggleSidebar }) => {
             <span className="icon">{icon}</span>
             {text}
           </NavLink>
-        )
-      })}
-      {/* <hr className="separator-line" /> */}
-      {externalLinks.map(link => {
-        const { id, text, icon, url } = link
-        return (
-          <a
-            as="a"
-            href={url}
-            target="_blank"
-            key={id}
-            className="nav-link"
-            onClick={toggleSidebar}
-            rel="noreferrer">
-            <span className="icon">{icon}</span>
-            {text}
-          </a>
         )
       })}
       <div className="btn-container">

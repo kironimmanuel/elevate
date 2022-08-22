@@ -1,4 +1,6 @@
-# MERN Job Tracker
+# MERN Job Tracker (under construction 🚧)
+
+###### currently adding more features: Job archive, email verification, password recovery etc.
 
 Original design by [John Smilga](https://github.com/john-smilga)
 

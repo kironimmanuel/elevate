@@ -1,21 +1,26 @@
-import { FormRow, FormRowSelect } from '.'
-import Wrapper from '../assets/wrappers/SearchContainer'
-import { useAppContext } from '../context/appContext'
+import Wrapper from '../../assets/wrappers/DashboardFormPage'
+import { FormRow, FormRowSelect } from '../../components'
+import Modal from '../../components/Modal'
+import ModalArchive from '../../components/ModalArchive'
+import { useAppContext } from '../../context/appContext'
 
-const SearchContainer = () => {
+const Archive = () => {
   const {
     isLoading,
     search,
-    searchStatus,
     searchType,
     sort,
     sortOptions,
-    statusOptions,
     jobTypeOptions,
     handleChange,
     clearFilters,
     numOfEntries,
     numOfEntriesOptions,
+    // alertSuccess,
+    showModal,
+    showArchiveModal,
+    searchStatus,
+    statusOptions,
   } = useAppContext()
 
   const handleSearch = e => {
@@ -27,18 +32,25 @@ const SearchContainer = () => {
     clearFilters()
   }
 
+  // CLEAR ARCHIVE 🚧
+  // const handleClearArchive = e => {
+  //   e.preventDefault()
+  //   alertSuccess('Archived has been cleared')
+  // }
+
   return (
     <Wrapper>
-      <form className="search-form form">
-        <h4>search jobs</h4>
+      <form className="from">
+        <h3>archived jobs</h3>
         <div className="form-center">
+          {showModal && <Modal />}
+          {showArchiveModal && <ModalArchive />}
           <FormRow
             type="text"
             name="search"
             value={search}
             handleChange={handleSearch}
           />
-
           <FormRowSelect
             labelText="job type"
             name="searchType"
@@ -66,15 +78,17 @@ const SearchContainer = () => {
             handleChange={handleSearch}
             list={['all', ...statusOptions]}
           />
+
           <button
             className="btn btn-block btn-danger"
             disabled={isLoading}
             onClick={handleSubmit}>
             clear filters
           </button>
+          {/* CLEAR ARCHIVE 🚧 */}
         </div>
       </form>
     </Wrapper>
   )
 }
-export default SearchContainer
+export default Archive

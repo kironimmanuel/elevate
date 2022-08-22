@@ -1,7 +1,9 @@
 import moment from 'moment'
-import { BsCalendarCheck, BsClock } from 'react-icons/bs'
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
+import { BsCalendarCheck, BsHourglassSplit } from 'react-icons/bs'
 import { FaBriefcase, FaCalendarAlt, FaLocationArrow } from 'react-icons/fa'
 import { GiCancel } from 'react-icons/gi'
+import { MdSaveAlt } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/Job'
 import { useAppContext } from '../context/appContext'
@@ -16,7 +18,8 @@ const Job = ({
   status,
   createdAt,
 }) => {
-  const { setEditJob, toggleModal, setDeleteJobId } = useAppContext()
+  const { setEditJob, toggleModal, toggleArchiveModal, setDeleteJobId } =
+    useAppContext()
   const date = moment(createdAt).format('LLL')
 
   const openModal = id => {
@@ -25,7 +28,7 @@ const Job = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper className={`${status}-bcg`}>
       <header>
         <div className="main-icon">{company.charAt(0)}</div>
         <div className="info">
@@ -47,7 +50,7 @@ const Job = ({
             )}
             {status === 'pending' && (
               <span>
-                <BsClock />
+                <BsHourglassSplit />
                 pending
               </span>
             )}
@@ -65,14 +68,23 @@ const Job = ({
               to="/add-job"
               className="btn edit-btn"
               onClick={() => setEditJob(_id)}>
-              edit
+              <AiOutlineEdit /> edit
             </Link>
             <button
               type="button"
               className="btn delete-btn"
               onClick={() => openModal(_id)}>
-              delete
+              <AiOutlineDelete /> delete
             </button>
+            {/* ADD TO ARCHIVE 🚧 */}
+            {status === 'declined' && (
+              <button
+                type="button"
+                className="btn archive-btn"
+                onClick={toggleArchiveModal}>
+                <MdSaveAlt /> archive
+              </button>
+            )}
           </div>
         </footer>
       </div>

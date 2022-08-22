@@ -1,6 +1,3 @@
-// Error() constructor
-// The Error constructor creates an error object
-// new Error (message, fileName, lineNumber)
 import { StatusCodes } from 'http-status-codes'
 
 const errorHandlerMiddleware = (err, req, res, next) => {

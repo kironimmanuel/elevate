@@ -4,29 +4,20 @@ import { useAppContext } from '../../context/appContext'
 const Settings = () => {
   const {
     isLoading,
-    // theme,
-    // setTheme,
-    // themeSetting,
-    // themeSettingOptions,
-    // handleChange,
-    alertSuccess,
+    handleChange,
+
     alertInfo,
+    language,
+    languageOptions,
   } = useAppContext()
 
-  // const handleSelect = e => {
-  //   handleChange({ name: e.target.name, value: e.target.value })
-  //   if (e.target.value === 'light-theme') {
-  //     setTheme('light-theme')
-  //   }
-  //   if (e.target.value === 'dark-theme') {
-  //     setTheme('dark-theme')
-  //   }
-  // }
+  const handleSelect = e => {
+    handleChange({ name: e.target.name, value: e.target.value })
+  }
 
   const handleSubmit = e => {
     e.preventDefault()
-    // document.documentElement.className = theme
-    alertSuccess('Changes have been saved')
+    alertInfo('Button under construction 🚧')
   }
 
   return (
@@ -34,13 +25,13 @@ const Settings = () => {
       <form className="form">
         <h3>Settings</h3>
         <div className="form-center">
-          {/* <FormRowSelect
-            labelText="Theme"
-            name="themeSetting"
-            value={themeSetting}
+          <FormRowSelect
+            labelText="Language"
+            name="language"
+            value={language}
             handleChange={handleSelect}
-            list={themeSettingOptions}
-          /> */}
+            list={languageOptions}
+          />
           <button
             className="btn btn-block"
             type="button"

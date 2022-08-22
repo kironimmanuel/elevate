@@ -1,15 +1,4 @@
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-html {
-  /*16px*/
-  font-size: 100%;
-}
 
 :root {
   --primary-50: #e9eef6;
@@ -40,11 +29,11 @@ html {
   --black: #222;
   --white: #fff;
 
-  --red-light: #f8d7da;
+  --red-light: #e67c7c65;
   --red-dark: #842029;
   --yellow-light: #f5eead;
   --yellow-dark: #917323;
-  --green-light: #d1e7dd;
+  --green-light: #c1d5a454;
   --green-dark: #0f5132;
 
   --headingFont: 'Montserrat', sans-serif;
@@ -102,8 +91,6 @@ html {
   --textColor: var(--grey-900);
 }
 .dark-theme {
-  --primary-900: #e9eef6;
-  --primary-800: #d3dded;
   --primary-700: #becde5;
   --primary-600: #a8bcdc;
   --primary-500: #92abd3;
@@ -134,6 +121,16 @@ html {
   --textColor: var(--grey-900);
 }
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
 body {
   background: var(--backgroundColor);
   font-family: var(--bodyFont);
@@ -146,7 +143,6 @@ p {
   margin-bottom: 1.5rem;
   max-width: 40em;
 }
-
 h1,
 h2,
 h3,
@@ -160,24 +156,19 @@ h5 {
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
-
 h1 {
   margin-top: 0;
   font-size: 3.052rem;
 }
-
 h2 {
   font-size: 2.441rem;
 }
-
 h3 {
   font-size: 1.953rem;
 }
-
 h4 {
   font-size: 1.563rem;
 }
-
 h5 {
   font-size: 1.25rem;
 }
@@ -401,15 +392,6 @@ input[type='number']::-webkit-outer-spin-button {
   .theme-btn {
     position: fixed;
     bottom: 0 !important;
-    margin: 3.5rem !important;
+    margin: 3.2rem !important;
   }
 }
-
-/* .btn-danger {
-  background: var(--red-light);
-  color: var(--red-dark);
-} */
-/* .btn-danger:hover {
-  background: var(--red-dark);
-  color: var(--white);
-} */
