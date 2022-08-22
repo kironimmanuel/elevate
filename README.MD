@@ -1,4 +1,4 @@
-# MERN Job Tracker Dashboard
+# MERN Job Tracker
 
 Original design by [John Smilga](https://github.com/john-smilga)
 
