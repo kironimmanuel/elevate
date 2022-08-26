@@ -24,7 +24,7 @@ const getAllJobs = async (req, res) => {
   }
   if (search) {
     // mongoDB syntax $regex - matching letters will be returned and "i" negates the case sensitivity
-    queryObject.position = { $regex: search, $options: 'i' }
+    queryObject.company = { $regex: search, $options: 'i' }
   }
 
   // Important no await
