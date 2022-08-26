@@ -1,4 +1,4 @@
-# MERN Job Tracker (under construction 🚧)
+# MERN Job Tracker
 
 ###### currently adding more features: Job archive, email verification, password recovery etc.
 
