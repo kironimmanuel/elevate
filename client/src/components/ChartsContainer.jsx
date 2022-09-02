@@ -7,7 +7,7 @@ import BarChart from './BarChart'
 
 const ChartsContainer = () => {
   const { monthlyApplications: data } = useAppContext()
-  const [barChart, setBarChart] = useState(true)
+  const [areaChart, setAreaChart] = useState(true)
 
   return (
     <Wrapper>
@@ -15,13 +15,13 @@ const ChartsContainer = () => {
       <button
         className="charts-btn"
         type="button"
-        onClick={() => setBarChart(!barChart)}>
-        {barChart ? 'area chart' : 'bar chart'}
+        onClick={() => setAreaChart(!areaChart)}>
+        {areaChart ? 'bar chart' : 'area chart'}
         <span>
           <TbSwitchHorizontal />
         </span>
       </button>
-      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
+      {areaChart ? <AreaChart data={data} /> : <BarChart data={data} />}
     </Wrapper>
   )
 }
