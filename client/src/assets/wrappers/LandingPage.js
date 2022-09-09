@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.main`
+  height: 100vh !important;
   nav {
     width: var(--fluid-width);
     max-width: var(--max-width);
@@ -13,7 +14,8 @@ const Wrapper = styled.main`
     min-height: calc(100vh - var(--nav-height));
     display: grid;
     align-items: center;
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
+    justify-content: center;
   }
   h1 {
     font-weight: 700;
@@ -29,12 +31,16 @@ const Wrapper = styled.main`
   }
   @media (min-width: 992px) {
     .page {
-      grid-template-columns: 1fr 1fr;
+      /* grid-template-rows: 1fr 1fr; */
       column-gap: 3rem;
     }
     .main-img {
       display: block;
+      width: 37.5rem;
+    }
+    nav {
+      display: none;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

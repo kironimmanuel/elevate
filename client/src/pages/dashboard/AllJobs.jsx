@@ -1,18 +1,17 @@
-import { JobsContainer, SearchContainer } from '../../components'
-import Modal from '../../components/Modal'
-import ModalArchive from '../../components/ModalArchive'
-import { useAppContext } from '../../context/appContext'
+import { JobsContainer, SearchContainer } from "../../components";
+import Modal from "../../components/Modal";
+import { useAppContext } from "../../context/appContext";
 
 const AllJobs = () => {
-  const { showModal, showArchiveModal } = useAppContext()
+  const { showModal } = useAppContext();
 
   return (
     <>
       {showModal && <Modal />}
-      {showArchiveModal && <ModalArchive />}
+      {/* {showArchiveModal && <ModalArchive />} */}
       <SearchContainer />
       <JobsContainer />
     </>
-  )
-}
-export default AllJobs
+  );
+};
+export default AllJobs;

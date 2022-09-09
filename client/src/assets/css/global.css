@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
   --primary-50: #e9eef6;
@@ -36,8 +36,8 @@
   --green-light: #c1d5a454;
   --green-dark: #0f5132;
 
-  --headingFont: 'Montserrat', sans-serif;
-  --bodyFont: 'Montserrat', sans-serif;
+  --headingFont: "Montserrat", sans-serif;
+  --bodyFont: "Montserrat", sans-serif;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
 
@@ -324,8 +324,8 @@ ul {
   text-transform: capitalize;
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -393,5 +393,13 @@ input[type='number']::-webkit-outer-spin-button {
     position: fixed;
     bottom: 0 !important;
     margin: 3.2rem !important;
+  }
+}
+@media screen and (min-width: 1552px) {
+  .hero-bcg {
+    background: url(../images/hero.svg);
+    background-size: 140% !important;
+    background-repeat: no-repeat;
+    background-position: top;
   }
 }

@@ -1,16 +1,15 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { ToastContainer, Zoom } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { Error, Landing, ProtectedRoute, Register } from './pages'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Error, Landing, ProtectedRoute, Register } from "./pages";
 import {
   AddJob,
   AllJobs,
-  Archive,
   Profile,
   Settings,
   SharedLayout,
   Stats,
-} from './pages/dashboard'
+} from "./pages/dashboard";
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
           <Route path="all-jobs" element={<AllJobs />} />
           <Route path="add-job" element={<AddJob />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="archive" element={<Archive />} />
           <Route path="settings" element={<Settings />} />
         </Route>
 
@@ -45,7 +43,7 @@ function App() {
         closeOnClick
       />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

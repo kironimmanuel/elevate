@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.aside`
   display: none;
@@ -12,6 +12,17 @@ const Wrapper = styled.aside`
       width: 250px;
       margin-left: -250px;
       transition: var(--transition);
+    }
+    .nav-links-container {
+      padding-top: 2rem;
+    }
+    h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+      padding-left: 1.5rem;
+      opacity: 0.3;
+      font-weight: 600;
     }
     .content {
       position: sticky;
@@ -27,7 +38,7 @@ const Wrapper = styled.aside`
       padding-left: 2.5rem;
     }
     .nav-links {
-      padding-top: 2rem;
+      /* padding-top: 2rem; */
       display: flex;
       flex-direction: column;
     }
@@ -60,5 +71,5 @@ const Wrapper = styled.aside`
       color: var(--primary-500);
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

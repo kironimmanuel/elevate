@@ -5,37 +5,37 @@ import {
   FcDocument,
   FcList,
   FcSettings,
-} from 'react-icons/fc'
+} from "react-icons/fc";
 
 export const links = [
   {
-    text: 'stats',
-    path: '/',
+    text: "stats",
+    path: "/",
     icon: <FcComboChart />,
+    category: "main",
   },
   {
-    text: 'all jobs',
-    path: 'all-jobs',
-    icon: <FcList />,
-  },
-  {
-    text: 'add job',
-    path: 'add-job',
+    text: "add job",
+    path: "add-job",
     icon: <FcAddRow />,
+    category: "main",
   },
   {
-    text: 'archive',
-    path: 'archive',
-    icon: <FcDocument />,
+    text: "all jobs",
+    path: "all-jobs",
+    icon: <FcList />,
+    category: "lists",
   },
   {
-    text: 'profile',
-    path: 'profile',
+    text: "profile",
+    path: "profile",
     icon: <FcAbout />,
+    category: "user",
   },
   {
-    text: 'settings',
-    path: 'settings',
+    text: "settings",
+    path: "settings",
     icon: <FcSettings />,
+    category: "user",
   },
-]
+];

@@ -1,6 +1,6 @@
-import { FormRow, FormRowSelect } from '.'
-import Wrapper from '../assets/wrappers/SearchContainer'
-import { useAppContext } from '../context/appContext'
+import { FormRow, FormRowSelect } from ".";
+import Wrapper from "../assets/wrappers/SearchContainer";
+import { useAppContext } from "../context/appContext";
 
 const SearchContainer = () => {
   const {
@@ -16,16 +16,21 @@ const SearchContainer = () => {
     clearFilters,
     numOfEntries,
     numOfEntriesOptions,
-  } = useAppContext()
+    setStatItemSearch,
+  } = useAppContext();
 
-  const handleSearch = e => {
-    handleChange({ name: e.target.name, value: e.target.value })
-  }
+  const handleSearch = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(name, value);
+    handleChange({ name: e.target.name, value: e.target.value });
+    setStatItemSearch("");
+  };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    clearFilters()
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    clearFilters();
+  };
 
   return (
     <Wrapper>
@@ -44,7 +49,7 @@ const SearchContainer = () => {
             name="searchType"
             value={searchType}
             handleChange={handleSearch}
-            list={['all', ...jobTypeOptions]}
+            list={["all", ...jobTypeOptions]}
           />
           <FormRowSelect
             name="sort"
@@ -64,7 +69,7 @@ const SearchContainer = () => {
             name="searchStatus"
             value={searchStatus}
             handleChange={handleSearch}
-            list={['all', ...statusOptions]}
+            list={["all", ...statusOptions]}
           />
           <button
             className="btn btn-block btn-danger"
@@ -75,6 +80,6 @@ const SearchContainer = () => {
         </div>
       </form>
     </Wrapper>
-  )
-}
-export default SearchContainer
+  );
+};
+export default SearchContainer;

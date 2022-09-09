@@ -1,13 +1,12 @@
-import moment from 'moment'
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
-import { BsCalendarCheck, BsHourglassSplit } from 'react-icons/bs'
-import { FaBriefcase, FaCalendarAlt, FaLocationArrow } from 'react-icons/fa'
-import { GiCancel } from 'react-icons/gi'
-import { MdSaveAlt } from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import Wrapper from '../assets/wrappers/Job'
-import { useAppContext } from '../context/appContext'
-import JobInfo from './JobInfo'
+import moment from "moment";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { BsCalendarCheck, BsHourglassSplit } from "react-icons/bs";
+import { FaBriefcase, FaCalendarAlt, FaLocationArrow } from "react-icons/fa";
+import { GiCancel } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import Wrapper from "../assets/wrappers/Job";
+import { useAppContext } from "../context/appContext";
+import JobInfo from "./JobInfo";
 
 const Job = ({
   _id,
@@ -18,14 +17,13 @@ const Job = ({
   status,
   createdAt,
 }) => {
-  const { setEditJob, toggleModal, toggleArchiveModal, setDeleteJobId } =
-    useAppContext()
-  const date = moment(createdAt).format('LLL')
+  const { setEditJob, toggleModal, setDeleteJobId } = useAppContext();
+  const date = moment(createdAt).format("LLL");
 
-  const openModal = id => {
-    setDeleteJobId(id)
-    toggleModal()
-  }
+  const openDeleteModal = (id) => {
+    setDeleteJobId(id);
+    toggleModal();
+  };
 
   return (
     <Wrapper className={`${status}-bcg`}>
@@ -42,19 +40,19 @@ const Job = ({
           <JobInfo icon={<FaCalendarAlt />} text={date} />
           <JobInfo icon={<FaBriefcase />} text={jobType} />
           <div className={`status ${status}`}>
-            {status === 'interview' && (
+            {status === "interview" && (
               <span>
                 <BsCalendarCheck />
                 interview
               </span>
             )}
-            {status === 'pending' && (
+            {status === "pending" && (
               <span>
                 <BsHourglassSplit />
                 pending
               </span>
             )}
-            {status === 'declined' && (
+            {status === "declined" && (
               <span>
                 <GiCancel />
                 declined
@@ -70,25 +68,17 @@ const Job = ({
               onClick={() => setEditJob(_id)}>
               <AiOutlineEdit /> edit
             </Link>
+
             <button
               type="button"
               className="btn delete-btn"
-              onClick={() => openModal(_id)}>
+              onClick={() => openDeleteModal(_id)}>
               <AiOutlineDelete /> delete
             </button>
-            {/* ADD TO ARCHIVE 🚧 */}
-            {status === 'declined' && (
-              <button
-                type="button"
-                className="btn archive-btn"
-                onClick={toggleArchiveModal}>
-                <MdSaveAlt /> archive
-              </button>
-            )}
           </div>
         </footer>
       </div>
     </Wrapper>
-  )
-}
-export default Job
+  );
+};
+export default Job;
