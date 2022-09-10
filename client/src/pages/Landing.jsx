@@ -12,13 +12,20 @@ const Landing = () => {
       <div className="container page">
         <div className="info">
           <img src={main} alt="job hunt" className="img main-img" />
-          <h1>
-            job <span>tracking</span> app
-          </h1>
-          <p>Track all your Job Applications in one place - for free</p>
-          <Link to="/register" className="btn btn-hero">
-            Login/Register
-          </Link>
+          <div className="text-container">
+            <h1>
+              El<span>ev</span>ate
+            </h1>
+            <p>
+              Track and manage all your Job applications in one place - for
+              free! <br />
+              Elevate provides an easy way to keep track of job status, applied
+              companies, and application statistics.
+            </p>
+            <Link to="/register" className="btn btn-hero">
+              Login/Register
+            </Link>
+          </div>
         </div>
       </div>
     </Wrapper>

@@ -394,6 +394,11 @@ input[type="number"]::-webkit-outer-spin-button {
     bottom: 0 !important;
     margin: 3.2rem !important;
   }
+  .btn-hero {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.8rem;
+  }
 }
 @media screen and (min-width: 1552px) {
   .hero-bcg {

@@ -14,32 +14,38 @@ const Wrapper = styled.main`
     min-height: calc(100vh - var(--nav-height));
     display: grid;
     align-items: center;
-    /* margin-top: -3rem; */
     justify-content: center;
   }
   h1 {
     font-weight: 700;
+    text-transform: none;
+    letter-spacing: 5px;
     span {
-      color: var(--primary-500);
+      color: var(--primary-800);
     }
   }
   p {
     color: var(--grey-600);
+    font-size: 1.1rem;
   }
   .main-img {
     display: none;
   }
   @media (min-width: 992px) {
-    .page {
-      /* grid-template-rows: 1fr 1fr; */
-      column-gap: 3rem;
-    }
     .main-img {
       display: block;
-      width: 37.5rem;
+      width: 40rem;
+      margin: auto;
     }
     nav {
       display: none;
+    }
+    .info {
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .text-container {
+      margin-top: -5rem;
     }
   }
 `;
