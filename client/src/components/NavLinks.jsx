@@ -47,10 +47,12 @@ const NavLinks = ({ toggleSidebar, statCategory }) => {
           );
         })}
       <div className="btn-container">
-        <button className="theme-btn" onClick={toggleTheme}>
-          {theme === "light-theme" ? <FaMoon /> : <FaLightbulb />}
-          {theme === "light-theme" ? " darkmode" : " lightmode"}
-        </button>
+        {
+          <button className="theme-btn" onClick={toggleTheme}>
+            {theme === "light-theme" ? <FaMoon /> : <FaLightbulb />}
+            {theme === "light-theme" ? " darkmode" : " lightmode"}
+          </button>
+        }
       </div>
     </div>
   );
