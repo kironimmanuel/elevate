@@ -17,7 +17,7 @@ import file.js from "./file.js"
 ##### Concurrently (setup in server package.json)
 
 ```sh
- # ignore client won't restart the server, when changes in the frontend happen
+ # ignore client won't restart the server when changes in the frontend happen
 "scripts": {
 "server": "nodemon server --ignore client",
 "client": "npm start --prefix client",
