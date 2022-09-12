@@ -47,7 +47,7 @@ const Job = ({
           <JobInfo icon={<FaBriefcase />} text={jobType} />
           <JobInfo icon={<FaCalendarAlt />} text={`Opened : ${date}`} />
           {updated !== date ? (
-            <JobInfo icon={<FaEdit />} text={`Updated : ${date}`} />
+            <JobInfo icon={<FaEdit />} text={`Updated : ${updated}`} />
           ) : (
             // <div className="placeholder"></div>
             <JobInfo />
