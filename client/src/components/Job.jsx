@@ -26,7 +26,6 @@ const Job = ({
   const { setEditJob, toggleModal, setDeleteJobId } = useAppContext();
   const date = moment(createdAt).format("L");
   const updated = moment(updatedAt).format("L");
-  console.log(updated);
   const openDeleteModal = (id) => {
     setDeleteJobId(id);
     toggleModal();
