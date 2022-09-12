@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin-top: 0.5rem;
@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   .icon {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-right: 1rem;
     display: flex;
     align-items: center;
@@ -18,5 +18,10 @@ const Wrapper = styled.div`
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
   }
-`
-export default Wrapper
+
+  .placeholder:after {
+    content: ".";
+    visibility: hidden;
+  }
+`;
+export default Wrapper;

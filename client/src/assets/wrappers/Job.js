@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   background: var(--white);
@@ -59,7 +59,7 @@ const Wrapper = styled.article`
   .content-center {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 0.5rem;
+    row-gap: 0.1rem;
     @media (min-width: 576px) {
       grid-template-columns: 1fr 1fr;
     }
@@ -68,8 +68,10 @@ const Wrapper = styled.article`
     }
     @media (min-width: 1120px) {
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
   }
+
   .status {
     border-radius: var(--borderRadius);
     text-transform: capitalize;
@@ -111,6 +113,6 @@ const Wrapper = styled.article`
   &:hover .actions {
     visibility: visible;
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

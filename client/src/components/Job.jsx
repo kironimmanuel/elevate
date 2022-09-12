@@ -1,7 +1,12 @@
 import moment from "moment";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { BsCalendarCheck, BsHourglassSplit } from "react-icons/bs";
-import { FaBriefcase, FaCalendarAlt, FaLocationArrow } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaCalendarAlt,
+  FaEdit,
+  FaLocationArrow,
+} from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Job";
@@ -16,10 +21,12 @@ const Job = ({
   jobType,
   status,
   createdAt,
+  updatedAt,
 }) => {
   const { setEditJob, toggleModal, setDeleteJobId } = useAppContext();
-  const date = moment(createdAt).format("LLL");
-
+  const date = moment(createdAt).format("L");
+  const updated = moment(updatedAt).format("L");
+  console.log(updated);
   const openDeleteModal = (id) => {
     setDeleteJobId(id);
     toggleModal();
@@ -37,8 +44,14 @@ const Job = ({
       <div className="content">
         <div className="content-center">
           <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
-          <JobInfo icon={<FaCalendarAlt />} text={date} />
           <JobInfo icon={<FaBriefcase />} text={jobType} />
+          <JobInfo icon={<FaCalendarAlt />} text={`Opened : ${date}`} />
+          {updated !== date ? (
+            <JobInfo icon={<FaEdit />} text={`Updated : ${date}`} />
+          ) : (
+            // <div className="placeholder"></div>
+            <JobInfo />
+          )}
           <div className={`status ${status}`}>
             {status === "interview" && (
               <span>
