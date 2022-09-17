@@ -1,5 +1,4 @@
-import { JobsContainer, SearchContainer } from "../../components";
-import Modal from "../../components/Modal";
+import { JobsContainer, Modal, SearchContainer } from "../../components";
 import { useAppContext } from "../../context/appContext";
 
 const AllJobs = () => {

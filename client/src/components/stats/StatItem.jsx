@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Wrapper from "../assets/wrappers/StatItem";
-import { useAppContext } from "../context/appContext";
+import Wrapper from "../../assets/wrappers/StatItem";
+import { useAppContext } from "../../context/appContext";
 
 const StatItem = ({ title, count, icon, color, bcg, status }) => {
   const { handleChange } = useAppContext();
@@ -14,7 +14,10 @@ const StatItem = ({ title, count, icon, color, bcg, status }) => {
       <header>
         <h5 className="title">{title}</h5>
       </header>
-      <span className="count">{count}</span>
+      <div>
+        <div className="icon">{icon}</div>
+        <div className="count">{count}</div>
+      </div>
       <footer>
         <Link
           to="/all-jobs"
@@ -24,7 +27,6 @@ const StatItem = ({ title, count, icon, color, bcg, status }) => {
           name="searchStatus">
           View {title}
         </Link>
-        <span className="icon">{icon}</span>
       </footer>
     </Wrapper>
   );

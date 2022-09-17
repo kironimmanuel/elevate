@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
+  border-top: 3px solid var(--primary-800);
   border-radius: var(--borderRadius);
   width: 100%;
   background: var(--white);
@@ -16,6 +17,7 @@ const Wrapper = styled.section`
     padding: 0;
     max-width: 100%;
     width: 100%;
+    transition: none !important;
   }
   .form-row {
     margin-bottom: 0;
@@ -63,6 +65,6 @@ const Wrapper = styled.section`
       margin-top: 0;
     }
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

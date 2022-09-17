@@ -101,7 +101,7 @@ const reducer = (state, action) => {
   if (action.type === HANDLE_CHANGE) {
     return {
       ...state,
-      // When adding filters, we always want to start at page 1
+      // When adding filters, start at page 1
       page: 1,
       [action.payload.name]: action.payload.value,
     };

@@ -7,7 +7,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts'
+} from "recharts";
 
 const AreaChartComponent = ({ data }) => {
   return (
@@ -19,23 +19,23 @@ const AreaChartComponent = ({ data }) => {
         <Legend
           width={100}
           wrapperStyle={{
-            top: 40,
-            right: 0,
-            backgroundColor: '#f5f5f5',
-            border: '1px solid #d5d5d5',
+            top: 0,
+            right: -20,
+            backgroundColor: "transparent",
+            border: "none",
             borderRadius: 3,
-            lineHeight: '40px',
+            lineHeight: "40px",
           }}
         />
         <Tooltip
           wrapperStyle={{
             width: 100,
-            color: 'black',
+            color: "black",
           }}
         />
         <Area type="monotone" dataKey="count" stroke="#2cb1bc" fill="#bef8fd" />
       </AreaChart>
     </ResponsiveContainer>
-  )
-}
-export default AreaChartComponent
+  );
+};
+export default AreaChartComponent;

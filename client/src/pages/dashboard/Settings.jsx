@@ -1,54 +1,33 @@
-import Wrapper from '../../assets/wrappers/DashboardFormPage'
-import { FormRowSelect } from '../../components'
-import { useAppContext } from '../../context/appContext'
+import { useEffect } from "react";
+import Wrapper from "../../assets/wrappers/DashboardFormPage";
+import { useAppContext } from "../../context/appContext";
 const Settings = () => {
-  const {
-    isLoading,
-    handleChange,
+  const { theme, setTheme } = useAppContext();
 
-    alertInfo,
-    language,
-    languageOptions,
-  } = useAppContext()
+  const toggleTheme = () => {
+    if (theme === "light-theme") {
+      setTheme("dark-theme");
+    } else {
+      setTheme("light-theme");
+    }
+  };
 
-  const handleSelect = e => {
-    handleChange({ name: e.target.name, value: e.target.value })
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    alertInfo('Button under construction 🚧')
-  }
+  useEffect(() => {
+    // It targets the whole DOM, easy light/darkmode setup
+    document.documentElement.className = theme;
+  }, [theme]);
 
   return (
     <Wrapper>
       <form className="form">
         <h3>Settings</h3>
         <div className="form-center">
-          <FormRowSelect
-            labelText="Language"
-            name="language"
-            value={language}
-            handleChange={handleSelect}
-            list={languageOptions}
-          />
-          <button
-            className="btn btn-block"
-            type="button"
-            disabled={isLoading}
-            onClick={() => alertInfo('Button under construction 🚧')}>
-            change password
-          </button>
-          <button
-            className="btn btn-block"
-            type="submit"
-            disabled={isLoading}
-            onClick={handleSubmit}>
-            {isLoading ? 'Please wait...' : 'save changes'}
+          <button type="button" className="btn btn-block" onClick={toggleTheme}>
+            {theme === "light-theme" ? " darkmode" : " lightmode"}
           </button>
         </div>
       </form>
     </Wrapper>
-  )
-}
-export default Settings
+  );
+};
+export default Settings;

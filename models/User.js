@@ -1,13 +1,13 @@
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
-import mongoose from 'mongoose'
-import mongooseTypePhone from 'mongoose-type-phone'
-import validator from 'validator'
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
+import mongooseTypePhone from "mongoose-type-phone";
+import validator from "validator";
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide your name'],
+    required: [true, "Please provide your name"],
     trim: true,
     minlength: 3,
     maxlength: 20,
@@ -16,17 +16,17 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     maxlength: 20,
-    default: 'lastName',
+    default: "lastName",
   },
   email: {
     type: String,
-    required: [true, 'Please provide your email address'],
+    required: [true, "Please provide your email address"],
     // Not a validator, but will check if a email already exists by creating unique index for each email
     unique: true,
     // Package for validating emails
     validate: {
       validator: validator.isEmail,
-      message: 'Please provide a valid email address',
+      message: "Please provide a valid email address",
     },
   },
   phoneNumber: {
@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     minlength: 5,
     maxlength: 20,
-    match: [/[0-9]/, 'Please provide valid phone number'],
+    match: [/[0-9]/, "Please provide valid phone number"],
     // match: /^\d{11}$/,
     // More testing required 🗯
     // type: mongoose.SchemaTypes.Phone,
@@ -50,7 +50,7 @@ const UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Please provide a password'],
+    required: [true, "Please provide a password"],
     minlength: 8,
     // Exclude the password from the return
     select: false,
@@ -59,26 +59,20 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     maxlength: 20,
-    default: 'My city',
+    default: "My city",
   },
-  // The user roles
-  // role: {
-  //   type: String,
-  //   enum: ['user', 'testUser'],
-  //   default: 'user',
-  // },
-})
+});
 
-// Before we save the document, we run functionality
+// Before we save the document, run functionality
 // Regular function for the this keyword scope
-UserSchema.pre('save', async function () {
-  // Since we don't want to hash the password again after updating the user
-  if (!this.isModified('password')) return
-  const salt = await bcrypt.genSalt(10)
-  this.password = await bcrypt.hash(this.password, salt)
-})
+UserSchema.pre("save", async function () {
+  // Prevent password from hashing again
+  if (!this.isModified("password")) return;
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
 
-// JSON web token - _id is a property on the Model
+// JSON web token - _id is property on the Model
 UserSchema.methods.createJWT = function () {
   return jwt.sign(
     { userId: this._id, role: this.role },
@@ -86,14 +80,13 @@ UserSchema.methods.createJWT = function () {
     {
       expiresIn: process.env.JWT_LIFETIME, // 1 day in .env
     }
-  )
-}
+  );
+};
 
-// candidatePassword the password from the object
+// Password from the object
 UserSchema.methods.comparePassword = async function (candidatePassword) {
-  const isMatch = await bcrypt.compare(candidatePassword, this.password)
-  return isMatch
-}
+  const isMatch = await bcrypt.compare(candidatePassword, this.password);
+  return isMatch;
+};
 
-// "User" will create a User collection in mongoDB
-export default mongoose.model('User', UserSchema)
+export default mongoose.model("User", UserSchema);

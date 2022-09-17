@@ -1,6 +1,6 @@
-import { FormRow, FormRowSelect } from ".";
-import Wrapper from "../assets/wrappers/SearchContainer";
-import { useAppContext } from "../context/appContext";
+import { FormRow, FormRowSelect } from "..";
+import Wrapper from "../../assets/wrappers/SearchContainer";
+import { useAppContext } from "../../context/appContext";
 
 const SearchContainer = () => {
   const {

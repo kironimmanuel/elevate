@@ -1,12 +1,7 @@
 import { nanoid } from "nanoid";
-import {
-  BsCalendarCheck,
-  BsEnvelopeOpen,
-  BsHourglassSplit,
-} from "react-icons/bs";
-import { MdCancelPresentation } from "react-icons/md";
-import Wrapper from "../assets/wrappers/StatsContainer";
-import { useAppContext } from "../context/appContext";
+import { FcBusiness, FcCalendar, FcCancel, FcClock } from "react-icons/fc";
+import Wrapper from "../../assets/wrappers/StatsContainer";
+import { useAppContext } from "../../context/appContext";
 import StatItem from "./StatItem";
 
 const StatsContainer = () => {
@@ -17,15 +12,15 @@ const StatsContainer = () => {
       // Color will be passed as prop to StatItem -> styled component
       title: "pending applications",
       count: stats.pending || 0,
-      icon: <BsHourglassSplit />,
+      icon: <FcClock />,
       bcg: "#ffd977",
       color: "#e6b536",
       status: "pending",
     },
     {
-      title: "interviews scheduled",
+      title: "scheduled interviews",
       count: stats.interview || 0,
-      icon: <BsCalendarCheck />,
+      icon: <FcCalendar />,
       color: "#2A507E",
       bcg: "#6C98CE",
       status: "interview",
@@ -33,7 +28,7 @@ const StatsContainer = () => {
     {
       title: "declined jobs",
       count: stats.declined || 0,
-      icon: <MdCancelPresentation />,
+      icon: <FcCancel />,
       color: "#7E2323",
       bcg: "#D76F6F",
       status: "declined",
@@ -42,7 +37,7 @@ const StatsContainer = () => {
       title: "total applications",
       count:
         (stats.pending || 0) + (stats.interview || 0) + (stats.declined || 0),
-      icon: <BsEnvelopeOpen />,
+      icon: <FcBusiness />,
       color: "#575756",
       bcg: "#d9dad7",
       status: "all",

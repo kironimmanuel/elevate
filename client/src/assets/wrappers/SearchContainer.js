@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   .form {
+    border-top: 3px solid var(--primary-800);
     width: 100%;
     max-width: 100%;
   }
@@ -39,6 +40,6 @@ const Wrapper = styled.section`
       margin-top: 0;
     }
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

@@ -1,10 +1,10 @@
-# MERN Job Tracker
+# Elevate
 
-###### currently adding more features: Job archive, email verification, password recovery etc.
+Dashboard for tracking job applications. Visual representation of data with [recharts](https://recharts.org/). CRUD functionality for Jobs, search function, user profile, database for jobs and users. Security packages used: helmet, cors, xss, rate-limiter & mongoSanitize
 
-Original design by [John Smilga](https://github.com/john-smilga)
+_Technologies applied: React, Node, Express, mongoDB, styled components, Sass_
 
-#### ES6 Syntax in Node.js
+##### ES6 Syntax in Node.js
 
 package.json: "type" : "module" at the top
 

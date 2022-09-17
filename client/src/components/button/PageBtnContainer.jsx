@@ -1,29 +1,29 @@
-import { nanoid } from 'nanoid'
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
-import Wrapper from '../assets/wrappers/PageBtnContainer'
-import { useAppContext } from '../context/appContext'
+import { nanoid } from "nanoid";
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
+import Wrapper from "../../assets/wrappers/PageBtnContainer";
+import { useAppContext } from "../../context/appContext";
 
 const PageBtnContainer = () => {
-  const { numOfPages, page, changePage } = useAppContext()
+  const { numOfPages, page, changePage } = useAppContext();
   // Index will reflect the number of pages
   const pages = Array.from({ length: numOfPages }, (_, index) => {
-    return index + 1
-  })
+    return index + 1;
+  });
 
   const nextPage = () => {
-    let newPage = page + 1
+    let newPage = page + 1;
     if (newPage > numOfPages) {
-      newPage = 1
+      newPage = 1;
     }
-    changePage(newPage)
-  }
+    changePage(newPage);
+  };
   const prevPage = () => {
-    let newPage = page - 1
+    let newPage = page - 1;
     if (newPage < 1) {
-      newPage = numOfPages
+      newPage = numOfPages;
     }
-    changePage(newPage)
-  }
+    changePage(newPage);
+  };
 
   return (
     <Wrapper>
@@ -32,16 +32,16 @@ const PageBtnContainer = () => {
         prev
       </button>
       <div className="btn-container">
-        {pages.map(pageNum => {
+        {pages.map((pageNum) => {
           return (
             <button
               key={nanoid()}
               type="button"
-              className={pageNum === page ? 'page-btn active' : 'page-btn'}
+              className={pageNum === page ? "page-btn active" : "page-btn"}
               onClick={() => changePage(pageNum)}>
               {pageNum}
             </button>
-          )
+          );
         })}
       </div>
       <button className="next-btn" onClick={nextPage}>
@@ -49,6 +49,6 @@ const PageBtnContainer = () => {
         <HiChevronDoubleRight />
       </button>
     </Wrapper>
-  )
-}
-export default PageBtnContainer
+  );
+};
+export default PageBtnContainer;

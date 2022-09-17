@@ -1,8 +1,7 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-// mongoose connect method returns a promise, setup async await in server.js
-const connectDB = url => {
-  return mongoose.connect(url)
-}
+const connectDB = (url) => {
+  return mongoose.connect(url);
+};
 
-export default connectDB
+export default connectDB;

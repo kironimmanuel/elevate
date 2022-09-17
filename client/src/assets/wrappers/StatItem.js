@@ -7,9 +7,9 @@ const Wrapper = styled.article`
   box-shadow: var(--shadow-2);
   /* border-bottom: 5px solid ${(props) => props.color}; */
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
     color: var(--grey-300);
   }
   footer {
@@ -22,6 +22,13 @@ const Wrapper = styled.article`
       font-size: 0.9rem;
       color: var(--grey-900);
     }
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 0.5rem 0;
   }
   .count {
     display: block;
@@ -37,15 +44,15 @@ const Wrapper = styled.article`
     margin-top: 0.5rem;
   }
   .icon {
-    width: 50px;
-    height: 50px;
-    background: ${(props) => props.bcg};
+    /* width: 80px;
+    height: 80px; */
+    /* background: ${(props) => props.bcg}; */
     border-radius: var(--borderRadius);
     display: flex;
     align-items: center;
     justify-content: center;
     svg {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       color: ${(props) => props.color};
     }
   }

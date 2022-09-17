@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.nav`
+  background: var(--white);
   height: var(--nav-height);
   display: flex;
   align-items: center;
@@ -19,6 +20,7 @@ const Wrapper = styled.nav`
     align-items: center;
     justify-content: space-between;
     .user-info {
+      cursor: default;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -28,14 +30,27 @@ const Wrapper = styled.nav`
     }
   }
 
-  .btn-logout {
-    background: transparent;
-    border: 2px solid var(--primary-900);
-    color: var(--primary-500);
-    &:hover {
-      color: var(--white);
-      background: var(--primary-900);
-    }
+  .notification-bell {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .dropdown {
+    font-size: 1rem;
+    background: var(--white);
+    box-shadow: var(--shadow-4);
+    position: absolute;
+    top: 4rem;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: none;
+    padding: 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    border-radius: 12px;
+  }
+  .dropdown.show {
+    display: block;
   }
 
   .toggle-btn {
@@ -62,50 +77,23 @@ const Wrapper = styled.nav`
       font-size: 0.9rem;
     }
   }
-
-  background: var(--white);
-  .btn-container {
-    position: relative;
-  }
-
-  .btn {
+  .profile {
+    background: var(--primary-800);
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    padding: 1.7rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0 0.5rem;
-    position: relative;
-    box-shadow: var(--shadow-2);
+    align-items: center;
   }
-
-  .dropdown {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    background: var(--primary-100);
-    box-shadow: var(--shadow-2);
-    padding: 0.5rem;
-    text-align: center;
-    visibility: hidden;
-    border-radius: var(--borderRadius);
-  }
-
-  .show-dropdown {
-    visibility: visible;
-  }
-
-  .dropdown-btn {
-    background: transparent;
-    border-color: transparent;
-    color: var(--primary-500);
-    letter-spacing: var(--letterSpacing);
-    text-transform: capitalize;
-    cursor: pointer;
-  }
-
-  .logo-text {
+  .date {
     display: none;
     margin: 0;
+    font-size: 1.25rem;
   }
 
   @media (min-width: 992px) {
@@ -117,9 +105,12 @@ const Wrapper = styled.nav`
     .logo {
       display: none;
     }
-    .logo-text {
+    .date {
       display: block;
     }
+    .dropdown {
+      left: 80%;
+    }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

@@ -1,15 +1,27 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   box-shadow: var(--shadow-3);
   padding: 2rem;
   border-radius: var(--radius);
   background: var(--white);
 
+  .left-chart {
+    grid-column: 1 / span 1;
+  }
+  .right-chart {
+    grid-column: 2 / span 3;
+  }
+  .pie-chart {
+    margin-top: 5rem;
+  }
+
   @media (max-width: 992px) {
     display: none;
   }
-  margin-top: 4rem;
+  margin-top: 3rem;
   text-align: center;
   button {
     background: transparent;

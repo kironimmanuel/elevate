@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import Wrapper from "../assets/wrappers/Job";
-import { useAppContext } from "../context/appContext";
+import Wrapper from "../../assets/wrappers/Job";
+import { useAppContext } from "../../context/appContext";
 import JobInfo from "./JobInfo";
 
 const Job = ({
@@ -30,9 +30,8 @@ const Job = ({
     setDeleteJobId(id);
     toggleModal();
   };
-
   return (
-    <Wrapper className={`${status}-bcg`}>
+    <Wrapper className={`${status}-border`}>
       <header>
         <div className="main-icon">{company.charAt(0)}</div>
         <div className="info">

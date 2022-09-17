@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
-import Wrapper from '../../assets/wrappers/SharedLayout'
-import { BigSidebar, Navbar, SmallSidebar } from '../../components'
+import { Outlet } from "react-router-dom";
+import Wrapper from "../../assets/wrappers/SharedLayout";
+import { BigSidebar, Navbar, SmallSidebar } from "../../layouts";
 
 const SharedLayout = () => {
   return (
@@ -17,6 +17,6 @@ const SharedLayout = () => {
         </div>
       </main>
     </Wrapper>
-  )
-}
-export default SharedLayout
+  );
+};
+export default SharedLayout;

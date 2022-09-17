@@ -78,18 +78,10 @@ const showStats = async (req, res) => {
 
   stats = stats.reduce((acc, curr) => {
     const { _id: title, count } = curr;
-    // Dynamic object properties
     // title will be: pending, interview or declined
     acc[title] = count;
     return acc;
   }, {});
-
-  // The return in postman
-  //   "stats": {
-  //     "pending": 27,
-  //     "interview": 36,
-  //     "declined": 37
-  // }
 
   const defaultStats = {
     pending: stats.pending || 0,
@@ -109,11 +101,11 @@ const showStats = async (req, res) => {
     },
     // -1 returns the latest jobs first
     { $sort: { "_id.year": -1, "_id.month": -1 } },
-    // Returns the latest 12 months
-    { $limit: 12 },
+    // Returns the latest 6 months
+    { $limit: 6 },
   ]);
 
-  // Refactor and format monthlyApplications, so we don't have to do it in the frontend
+  // Refactor and format monthlyApplications, frontend approach also possible
   monthlyApplications = monthlyApplications
     .map((item) => {
       const {

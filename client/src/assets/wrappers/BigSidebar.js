@@ -29,8 +29,10 @@ const Wrapper = styled.aside`
       top: 0;
     }
     .show-sidebar {
+      transition-property: margin-left;
       margin-left: 0;
     }
+
     header {
       height: 6rem;
       display: flex;
@@ -38,7 +40,7 @@ const Wrapper = styled.aside`
       padding-left: 2.5rem;
     }
     .nav-links {
-      /* padding-top: 2rem; */
+      margin-top: 3rem;
       display: flex;
       flex-direction: column;
     }
@@ -50,6 +52,9 @@ const Wrapper = styled.aside`
       padding-left: 2.5rem;
       text-transform: capitalize;
       transition: var(--transition);
+      &:nth-child(6) {
+        margin-top: 26.5rem !important;
+      }
     }
     .nav-link:hover:not(.active) {
       background: var(--grey-50);

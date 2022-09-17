@@ -1,3 +1,4 @@
+// Chunky reducer 🍖
 import axios from "axios";
 import React, { useContext, useReducer, useState } from "react";
 import { toast } from "react-toastify";
@@ -82,23 +83,17 @@ export const initialState = {
 
 const AppContext = React.createContext();
 
-// The component
 const AppProvider = ({ children }) => {
-  // Light & dark theme
   const [theme, setTheme] = useState("light-theme");
-  // Reducer approach, instead of useState()
   const [state, dispatch] = useReducer(reducer, initialState);
   // Job id for modal
   const [deleteJobId, setDeleteJobId] = useState("");
   // Stat item link
   const [statItemSearch, setStatItemSearch] = useState("");
 
-  // Axios instance 🗯
   const authFetch = axios.create({
     baseURL: "/api/v1",
   });
-  // Axios interceptors - kinda like a middleware
-  // Request interceptor ➡
   authFetch.interceptors.request.use(
     (config) => {
       config.headers.common["Authorization"] = `Bearer ${state.token}`;
@@ -122,63 +117,56 @@ const AppProvider = ({ children }) => {
     }
   );
 
-  // useReducer
-  // In appContext.js we dispatch the actions an we must pass in the type property
-  // Optionally we can provide other properties
-
-  // Alerts 🗯
+  // Toasts 🗯
   const alertSuccess = (msg) => {
     toast.success(msg, {
       theme: "colored",
+      toastId: "custom-id-yes",
     });
   };
   const alertWarn = (msg) => {
     toast.warn(msg, {
       theme: "colored",
+      toastId: "custom-id-yes",
     });
   };
   const alertDanger = (msg) => {
     toast.error(msg, {
       theme: "colored",
+      toastId: "custom-id-yes",
     });
   };
   const alertInfo = (msg) => {
     toast.info(msg, {
       theme: "colored",
+      toastId: "custom-id-yes",
     });
   };
 
-  // Sidebar 🗯
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR });
   };
 
-  // Modal 🗯
   const toggleModal = () => {
     dispatch({ type: TOGGLE_MODAL });
   };
 
-  // Handle change 🗯
   const handleChange = ({ name, value }) => {
-    // In reducer we are dynamically setting the name/key values
     dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
   };
 
-  // Clear values 🗯
   const clearValues = () => {
     dispatch({ type: CLEAR_VALUES });
   };
 
-  // Clear filters 🗯
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
 
-  // Change page 🗯
   const changePage = (page) => {
     dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
-  // Show stats 🗯
+
   const showStats = async () => {
     dispatch({ type: SHOW_STATS_BEGIN });
     try {
@@ -197,7 +185,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Get jobs 🗯
   // jobStatus for StatItem Links
   const getJobs = async (jobStatus) => {
     const { search, searchStatus, searchType, sort, numOfEntries, page } =
@@ -205,13 +192,12 @@ const AppProvider = ({ children }) => {
     let url = `/jobs?page=${page}&status=${
       jobStatus ? jobStatus : searchStatus
     }&jobType=${searchType}&sort=${sort}&limit=${numOfEntries}`;
-    // Conditionally add search if not empty
+    // If search input, attach to query
     if (search) {
       url = url + `&search=${search}`;
     }
     dispatch({ type: GET_JOBS_BEGIN });
     try {
-      // Axios default is GET
       const { data } = await authFetch(url);
       const { jobs, totalJobs, numOfPages } = data;
       dispatch({
@@ -224,7 +210,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Create job 🗯
   const createJob = async () => {
     dispatch({ type: CREATE_JOB_BEGIN });
     try {
@@ -247,11 +232,12 @@ const AppProvider = ({ children }) => {
       });
     }
   };
-  // Set edit job 🗯
+
+  // Set edit job fn important, since editing is happening in add job page
   const setEditJob = (id) => {
     dispatch({ type: SET_EDIT_JOB, payload: { id } });
   };
-  // Edit job 🗯
+
   const editJob = async () => {
     dispatch({ type: EDIT_JOB_BEGIN });
     try {
@@ -276,7 +262,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Delete job 🗯
   const deleteJob = async (jobId) => {
     dispatch({ type: DELETE_JOB_BEGIN });
     try {
@@ -292,7 +277,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Login/Register user 🗯
   const setupUser = async ({ currentUser, endPoint }) => {
     dispatch({ type: SETUP_USER_BEGIN });
     try {
@@ -300,7 +284,6 @@ const AppProvider = ({ children }) => {
         `/api/v1/auth/${endPoint}`,
         currentUser
       );
-      // response.data
       const { user, token, location } = data;
       dispatch({
         type: SETUP_USER_SUCCESS,
@@ -309,8 +292,6 @@ const AppProvider = ({ children }) => {
       alertSuccess(`Welcome, ${user.name} 👋`);
       addUserToLocalStorage({ user, location, token });
     } catch (error) {
-      // With axios log error.response
-      // data.msg coming from backend
       alertDanger(error.response.data.msg);
       dispatch({
         type: SETUP_USER_ERROR,
@@ -318,14 +299,12 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Logout user 🗯
   const logoutUser = () => {
     dispatch({ type: LOGOUT_USER });
     alertSuccess("Logged out successfully!");
     removeUserFromLocalStorage();
   };
 
-  // Update user 🗯
   const updateUser = async (currentUser) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
@@ -347,12 +326,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // Settings 🗯
-  // const updateSettings = async () => {
-  //   alertSuccess('Settings updated!')
-  // }
-
-  // Local storage 🗯
   const addUserToLocalStorage = ({
     user,
     token,
@@ -375,7 +348,6 @@ const AppProvider = ({ children }) => {
     localStorage.removeItem("themeSetting");
   };
 
-  // Children important, that's our application we render
   return (
     <AppContext.Provider
       value={{

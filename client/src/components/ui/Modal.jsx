@@ -1,5 +1,5 @@
-import Wrapper from "../assets/wrappers/Modal";
-import { useAppContext } from "../context/appContext";
+import Wrapper from "../../assets/wrappers/Modal";
+import { useAppContext } from "../../context/appContext";
 
 const Modal = () => {
   const { deleteJob, toggleModal, deleteJobId: id } = useAppContext();

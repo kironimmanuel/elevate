@@ -1,13 +1,12 @@
-import { BadRequestError, UnAuthenticatedError } from '../errors/index.js'
+import { BadRequestError, UnAuthenticatedError } from "../errors/index.js";
 
 const checkPermissions = (requestUser, resourceUserId) => {
-  if (requestUser.userId === '62f90adc826d35f20d0382eb') {
+  if (requestUser.userId === "62f90adc826d35f20d0382eb") {
     // If test user, display alert
-    throw new BadRequestError('Test user, no touchy only looky ☝')
+    throw new BadRequestError("Test user, no touchy only looky ☝");
   }
-  if (requestUser.userId === resourceUserId.toString()) return
-  // if (requestUser.userId === '62f8f18cb462b13c92829b9d') {
-  throw new UnAuthenticatedError('You are not authorized to access this route')
-}
+  if (requestUser.userId === resourceUserId.toString()) return;
+  throw new UnAuthenticatedError("You are not authorized to access this route");
+};
 
-export default checkPermissions
+export default checkPermissions;
