@@ -4,7 +4,7 @@ Dashboard for tracking job applications. Visual representation of data with [rec
 
 _Technologies applied: React, Node, Express, mongoDB, styled components, Sass_
 
-#### ES6 Syntax in Node.js
+### ES6 Syntax in Node.js
 
 package.json: "type" : "module" at the top
 
@@ -14,7 +14,7 @@ Imports require the .js extension
 import file.js from "./file.js"
 ```
 
-#### Concurrently (setup in server package.json)
+### Concurrently (setup in server package.json)
 
 ```sh
  # ignore client won't restart the server when changes in the frontend happen
@@ -25,7 +25,7 @@ import file.js from "./file.js"
 },
 ```
 
-#### Proxy setup
+### Proxy setup
 
 Only for development
 
@@ -37,7 +37,7 @@ package.json in client
 
 Conveniently, this avoids CORS issues and error messages in development
 
-#### Login/Register routes in Postman
+### Login/Register routes in Postman
 
 In tests
 
@@ -52,7 +52,7 @@ Authorization
 {{token}}
 ```
 
-#### SVGO
+### SVGO
 
 Minify SVGs and fix Namespace issue
 
@@ -60,25 +60,25 @@ Minify SVGs and fix Namespace issue
 svgo logo.svg -o logo.min.svg
 ```
 
-#### Mockaroo
+### Mockaroo
 
 Generate mock data
 
 [Mockaroo](https://www.mockaroo.com/)
 
-#### Recharts
+### Recharts
 
 Awesome library for charts
 
 [Recharts](https://recharts.org)
 
-#### populate mongoDb with data
+### populate mongoDb with data
 
 ```sh
 node populate
 ```
 
-#### Aggregation Pipeline with mongoDB
+### Aggregation Pipeline with mongoDB
 
 ```sh
 import mongoose from 'mongoose'
@@ -93,7 +93,7 @@ const showStatistics = async (req, res) => {
 }
 ```
 
-#### Production setup
+### Production setup
 
 ```sh
 package.json
