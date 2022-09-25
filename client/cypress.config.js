@@ -1,10 +1,10 @@
-// npx cypress open
 // import { defineConfig } from "cypress";
 module.exports = {
   e2e: {
     baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      config.env = process.env;
+      return config;
     },
   },
 };
