@@ -5,9 +5,12 @@
 
 # testing
 /coverage
+cypress.env.json
+cypress.config.js
 
 # production
 /build
+
 
 # misc
 .DS_Store
