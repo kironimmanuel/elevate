@@ -105,3 +105,23 @@ package.json
 
   },
 ```
+
+### Testing with cypress
+
+`npx cypress open`
+
+in CLIENT `package.json` add
+
+```sh
+  "scripts": {
+    "test": "cypress open",
+  },
+  "eslintConfig": {
+    "extends": [
+        # Omits eslint from marking cy. as not defined
+      "plugin:cypress/recommended"
+    ]
+  },
+```
+
+`npm test` to open cypress
