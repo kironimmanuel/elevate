@@ -76,14 +76,16 @@ const Job = ({
             <Link
               to="/add-job"
               className="btn edit-btn"
-              onClick={() => setEditJob(_id)}>
+              onClick={() => setEditJob(_id)}
+              data-cy="edit">
               <AiOutlineEdit /> edit
             </Link>
 
             <button
               type="button"
               className="btn delete-btn"
-              onClick={() => openDeleteModal(_id)}>
+              onClick={() => openDeleteModal(_id)}
+              data-cy="delete">
               <AiOutlineDelete /> delete
             </button>
           </div>

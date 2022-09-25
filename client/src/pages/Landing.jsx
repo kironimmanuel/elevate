@@ -22,7 +22,10 @@ const Landing = () => {
               Elevate provides an easy way to keep track of job status, applied
               companies, and application statistics.
             </p>
-            <Link to="/register" className="btn btn-hero">
+            <Link
+              to="/register"
+              className="btn btn-hero"
+              data-cy="login/register">
               Login/Register
             </Link>
           </div>

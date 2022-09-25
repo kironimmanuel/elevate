@@ -14,13 +14,18 @@ const Modal = () => {
         <div className="modal">
           <h4>Are you sure you want to remove the job entry?</h4>
           <div className="btn-container">
-            <button type="button" className="btn" onClick={deleteJobConfirm}>
+            <button
+              type="button"
+              className="btn"
+              onClick={deleteJobConfirm}
+              data-cy="confirm">
               confirm
             </button>
             <button
               type="button"
               className="btn cancel-btn"
-              onClick={toggleModal}>
+              onClick={toggleModal}
+              data-cy="cancel">
               cancel
             </button>
           </div>
