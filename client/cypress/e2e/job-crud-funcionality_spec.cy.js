@@ -1,25 +1,11 @@
 /* global cy */
+
 describe("add,edit & delete job", () => {
-  const email = "cypress@testing.com";
-  const password = "password";
-
-  // Programmatically login 🚧
-  // it("logs in programmatically without using the UI", function () {
-  //   // destructuring assignment of the this.currentUser object
-  //   const { username, password } = this.currentUser;
-  //   // programmatically log us in without needing the UI
-  //   cy.request("POST", "/login", {
-  //     email,
-  //     password,
-  //   });
-  // });
-  // Clear database before every test run 🚧
-
   it("render landing page nd login user", () => {
     cy.visit("/");
     cy.get('[data-cy="login/register"]').click();
-    cy.get(":nth-child(3) > .form-input").type(email);
-    cy.get(":nth-child(4) > .form-input").type(password);
+    cy.get(":nth-child(3) > .form-input").type(Cypress.env("email"));
+    cy.get(":nth-child(4) > .form-input").type(Cypress.env("password"));
     cy.get('[data-cy="login/register"]').click();
     cy.wait(3000);
   });
