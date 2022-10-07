@@ -11,16 +11,16 @@ export const links = [
     category: "main",
   },
   {
-    text: "add job",
-    path: "add-job",
-    icon: <AiOutlineFolderAdd />,
-    category: "main",
-  },
-  {
     text: "all jobs",
     path: "all-jobs",
     icon: <BiListUl />,
     category: "lists",
+  },
+  {
+    text: "add job",
+    path: "add-job",
+    icon: <AiOutlineFolderAdd />,
+    category: "main",
   },
   {
     text: "profile",

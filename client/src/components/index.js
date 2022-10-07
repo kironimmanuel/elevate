@@ -1,9 +1,9 @@
 import { PageBtnContainer } from "./button";
 import { AreaChart, BarChart, ChartsContainer, PieChart } from "./charts";
+import { Loading, Logo, Modal, NavLinks, SmallLoader } from "./elements";
 import { FormRow, FormRowSelect, SearchContainer } from "./form";
 import { Job, JobInfo, JobsContainer } from "./job";
 import { StatItem, StatsContainer } from "./stats";
-import { Loading, Logo, Modal, NavLinks, SmallLoader } from "./ui";
 
 export {
   PageBtnContainer,

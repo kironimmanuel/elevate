@@ -24,8 +24,8 @@ import {
   TOGGLE_SIDEBAR,
   UPDATE_USER_BEGIN,
   UPDATE_USER_ERROR,
-  UPDATE_USER_SUCCESS,
-} from "./actions";
+  UPDATE_USER_SUCCESS
+} from "../constants/actions";
 
 import { initialState } from "./appContext";
 

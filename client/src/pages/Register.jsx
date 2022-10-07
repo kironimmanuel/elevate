@@ -50,19 +50,6 @@ const Register = () => {
     }
   };
 
-  // Test user 🗯
-  const demoUser = () => {
-    const currentUser = {
-      name: "Test User",
-      email: "test@test.com",
-      password: "testuser",
-    };
-    setupUser({
-      currentUser,
-      endPoint: "login",
-    });
-  };
-
   useEffect(() => {
     if (user) {
       setTimeout(() => {
@@ -106,9 +93,6 @@ const Register = () => {
           disabled={isLoading}
           data-cy="login/register">
           {values.isMember ? "Login" : "Sign up"}
-        </button>
-        <button type="button" onClick={demoUser} className="btn btn-block">
-          demo
         </button>
         <p>
           {values.isMember ? "Not a member?" : "Already a member?"}

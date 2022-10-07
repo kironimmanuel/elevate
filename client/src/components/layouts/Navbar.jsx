@@ -1,7 +1,9 @@
 import moment from "moment";
 import { useState } from "react";
-import { AiFillBell } from "react-icons/ai";
-import { FcMenu, FcNext, FcPrevious } from "react-icons/fc";
+import { FaChevronDown, FaRegBell, FaSearch } from "react-icons/fa";
+import { FcMenu } from "react-icons/fc";
+import { MdChatBubbleOutline } from "react-icons/md";
+import { RiMenuFoldLine, RiMenuUnfoldLine } from "react-icons/ri";
 import Wrapper from "../assets/wrappers/Navbar";
 import { useAppContext } from "../context/appContext";
 
@@ -25,23 +27,28 @@ const Navbar = () => {
           type="button"
           className="big-screen-btn toggle-btn"
           onClick={toggleSidebar}>
-          {showSidebar ? <FcNext /> : <FcPrevious />}
+          {showSidebar ? <RiMenuUnfoldLine /> : <RiMenuFoldLine />}
         </button>
+        {/* <input type="text" /> */}
+        {/* <FaSearch /> */}
+
         <div>
           <h3 className="date">{time}</h3>
         </div>
         <div className="user-info">
+          <MdChatBubbleOutline className="chat" />
           <div
             className="notification-bell"
             onMouseEnter={() => setIsDropDownOpen(true)}
             onMouseLeave={() => setIsDropDownOpen(false)}>
-            <AiFillBell />
+            <FaRegBell />
           </div>
           <aside className={isDropDownOpen ? "dropdown show" : "dropdown"}>
             No Notifications
           </aside>
           <h5>{user?.name}</h5>
           <div className="profile">{user?.name.charAt(0)}</div>
+          <FaChevronDown />
         </div>
       </div>
     </Wrapper>

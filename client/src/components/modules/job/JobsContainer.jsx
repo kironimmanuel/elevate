@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Wrapper from "../../assets/wrappers/JobsContainer";
 import { useAppContext } from "../../context/appContext";
 import { PageBtnContainer } from "../button";
-import { Loading } from "../ui";
+import { Loading } from "../elements";
 import Job from "./Job";
 
 const JobsContainer = () => {

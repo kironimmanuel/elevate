@@ -1,4 +1,3 @@
-// Chunky reducer 🍖
 import axios from "axios";
 import React, { useContext, useReducer, useState } from "react";
 import { toast } from "react-toastify";
@@ -29,7 +28,7 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_ERROR,
   UPDATE_USER_SUCCESS,
-} from "./actions";
+} from "../constants/actions";
 import reducer from "./reducer";
 
 const user = localStorage.getItem("user");
@@ -271,9 +270,6 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       alertDanger(error.response.data.msg);
       dispatch({ type: DELETE_JOB_ERROR });
-      // Test user authorization conflict ❕
-      // alertDanger('Authentication attempt has failed, you will be logged out!')
-      // logoutUser()
     }
   };
 
