@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const Wrapper = styled.nav`
-  background: var(--white);
+  background: transparent;
   height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
 
   .logo {
     display: flex;
@@ -19,6 +18,7 @@ const Wrapper = styled.nav`
     width: 90vw;
     align-items: center;
     justify-content: space-between;
+
     .user-info {
       cursor: default;
       display: flex;
@@ -26,13 +26,17 @@ const Wrapper = styled.nav`
       gap: 1rem;
       h5 {
         margin-bottom: 0;
+        font-size: 1rem;
       }
     }
   }
 
   .notification-bell {
-    font-size: 1.5rem;
-    padding-top: 0.5rem;
+    font-size: 1.25rem;
+    padding-top: 0.25rem;
+  }
+  .chat {
+    font-size: 1.25rem;
   }
 
   .dropdown {
@@ -80,11 +84,11 @@ const Wrapper = styled.nav`
   .profile {
     background: var(--primary-800);
     border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    padding: 1.7rem;
+    height: 8px;
+    width: 8px;
+    padding: 1.35rem;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -93,14 +97,15 @@ const Wrapper = styled.nav`
   .date {
     display: none;
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   @media (min-width: 992px) {
     position: sticky;
     top: 0;
     .nav-center {
-      width: 90%;
+      width: 100%;
+      margin: auto 1rem;
     }
     .logo {
       display: none;

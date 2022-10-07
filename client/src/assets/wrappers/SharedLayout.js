@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   .dashboard {
@@ -6,9 +6,9 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr;
   }
   .dashboard-page {
+    padding-top: 1.5rem;
     width: 90vw;
     margin: 0 auto;
-    padding: 2rem 0;
   }
   @media (min-width: 992px) {
     .dashboard {
@@ -18,5 +18,5 @@ const Wrapper = styled.section`
       width: 90%;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

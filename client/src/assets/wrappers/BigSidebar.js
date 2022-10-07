@@ -4,7 +4,7 @@ const Wrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
     display: block;
-    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-2);
     .sidebar-container {
       background: var(--white);
       min-height: 100vh;
@@ -12,9 +12,18 @@ const Wrapper = styled.aside`
       width: 250px;
       margin-left: -250px;
       transition: var(--transition);
-    }
-    .nav-links-container {
-      padding-top: 2rem;
+      header {
+        .logo {
+          height: 50px;
+          width: 50px;
+        }
+        h1 {
+          margin-top: 1.25rem;
+          margin-left: 0.5rem;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+      }
     }
     h3 {
       margin-top: 1.2rem;
@@ -40,9 +49,9 @@ const Wrapper = styled.aside`
       padding-left: 2.5rem;
     }
     .nav-links {
-      margin-top: 3rem;
       display: flex;
       flex-direction: column;
+      font-size: 0.9rem;
     }
     .nav-link {
       display: flex;
@@ -53,7 +62,7 @@ const Wrapper = styled.aside`
       text-transform: capitalize;
       transition: var(--transition);
       &:nth-child(6) {
-        margin-top: 26.5rem !important;
+        margin-top: 31.5rem !important;
       }
     }
     .nav-link:hover:not(.active) {
