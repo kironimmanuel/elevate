@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { FormRow, Logo } from "../components";
@@ -12,7 +12,6 @@ const initialState = {
 };
 
 const Register = () => {
-  // The useNavigate hook returns a function that lets you navigate programmatically, for example after a form is submitted. If using replace: true, the navigation will replace the current entry in the history stack instead of adding a new one
   const navigate = useNavigate();
   const [values, setValues] = useState(initialState);
   const { user, setupUser, isLoading, alertWarn } = useAppContext();
@@ -22,7 +21,6 @@ const Register = () => {
   };
 
   const handleChange = (e) => {
-    // Dynamic object keys - we dynamically set the property keys and assigned them the input values
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
@@ -50,7 +48,6 @@ const Register = () => {
     }
   };
 
-  // Test user 🗯
   const demoUser = () => {
     const currentUser = {
       name: "Test User",
