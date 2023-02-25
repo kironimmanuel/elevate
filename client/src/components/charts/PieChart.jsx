@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "recharts";
 
-const COLORS = ["#ffd977", "#6c98ce", "#d76f6f"];
+const COLORS = ["#ffc93c", "#7dd87d", "#fa7a7a"];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({

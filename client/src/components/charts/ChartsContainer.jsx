@@ -12,7 +12,7 @@ const ChartsContainer = () => {
   const [areaChart, setAreaChart] = useState(true);
 
   return (
-    <Wrapper>
+    <Wrapper className="charts-section">
       <div className="left-chart">
         <h4>percentage split</h4>
         <PieChart stats={stats} />
