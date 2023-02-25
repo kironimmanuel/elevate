@@ -42,6 +42,7 @@ const SearchContainer = () => {
             name="search"
             value={search}
             handleChange={handleSearch}
+            labelText="search companies"
           />
 
           <FormRowSelect
