@@ -6,10 +6,9 @@ const SharedLayout = () => {
   return (
     <Wrapper>
       <main className="dashboard">
-        {/* Display property in css with media queries */}
         <SmallSidebar />
         <BigSidebar />
-        <div>
+        <div className="dashboard-parent-page">
           <Navbar />
           <div className="dashboard-page">
             <Outlet />

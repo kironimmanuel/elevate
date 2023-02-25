@@ -2,6 +2,7 @@ import moment from "moment";
 import { useState } from "react";
 import { AiFillBell } from "react-icons/ai";
 import { FcMenu, FcNext, FcPrevious } from "react-icons/fc";
+import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import Wrapper from "../assets/wrappers/Navbar";
 import { useAppContext } from "../context/appContext";
 
@@ -25,7 +26,7 @@ const Navbar = () => {
           type="button"
           className="big-screen-btn toggle-btn"
           onClick={toggleSidebar}>
-          {showSidebar ? <FcNext /> : <FcPrevious />}
+          {showSidebar ? <RiMenuUnfoldFill /> : <RiMenuFoldFill />}
         </button>
         <div>
           <h3 className="date">{time}</h3>
