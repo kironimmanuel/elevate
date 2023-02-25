@@ -9,28 +9,27 @@ const StatsContainer = () => {
 
   const defaultStats = [
     {
-      // Color will be passed as prop to StatItem -> styled component
       title: "pending applications",
       count: stats.pending || 0,
       icon: <FcClock />,
-      bcg: "#ffd977",
-      color: "#e6b536",
+      bcg: "#ffffef",
+      color: "#ffc93c",
       status: "pending",
     },
     {
       title: "scheduled interviews",
       count: stats.interview || 0,
       icon: <FcCalendar />,
-      color: "#2A507E",
-      bcg: "#6C98CE",
+      bcg: "#f0ffe6",
+      color: "#7dd87d",
       status: "interview",
     },
     {
       title: "declined jobs",
       count: stats.declined || 0,
       icon: <FcCancel />,
-      color: "#7E2323",
-      bcg: "#D76F6F",
+      bcg: "#fceee8",
+      color: "#fa7a7a",
       status: "declined",
     },
     {
@@ -38,8 +37,8 @@ const StatsContainer = () => {
       count:
         (stats.pending || 0) + (stats.interview || 0) + (stats.declined || 0),
       icon: <FcBusiness />,
-      color: "#575756",
-      bcg: "#d9dad7",
+      bcg: "#e6f8fe",
+      color: "#66d6f6",
       status: "all",
     },
   ];

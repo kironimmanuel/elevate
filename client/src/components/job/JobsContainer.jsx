@@ -29,7 +29,6 @@ const JobsContainer = () => {
   }, [search, searchStatus, searchType, sort, numOfEntries, page]);
 
   if (isLoading) {
-    // Prop to center the spinner with help of css
     return <Loading center />;
   }
 
