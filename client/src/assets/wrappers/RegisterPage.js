@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   display: grid;
@@ -15,6 +15,7 @@ const Wrapper = styled.section`
 
   h3 {
     text-align: center;
+    text-transform: uppercase;
   }
   p {
     margin: 0;
@@ -31,5 +32,5 @@ const Wrapper = styled.section`
     cursor: pointer;
     letter-spacing: var(--letterSpacing);
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

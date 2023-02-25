@@ -5,8 +5,9 @@ const Wrapper = styled.aside`
   @media (min-width: 992px) {
     display: block;
     box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    height: 100% !important;
     .sidebar-container {
-      background: var(--white);
+      background: #252727;
       min-height: 100vh;
       height: 100%;
       width: 250px;
@@ -14,7 +15,7 @@ const Wrapper = styled.aside`
       transition: var(--transition);
     }
     .nav-links-container {
-      padding-top: 2rem;
+      height: calc(100% - 96px) !important;
     }
     h3 {
       margin-top: 1.2rem;
@@ -27,6 +28,7 @@ const Wrapper = styled.aside`
     .content {
       position: sticky;
       top: 0;
+      height: 100vh !important;
     }
     .show-sidebar {
       transition-property: margin-left;
@@ -40,33 +42,34 @@ const Wrapper = styled.aside`
       padding-left: 2.5rem;
     }
     .nav-links {
-      margin-top: 3rem;
       display: flex;
       flex-direction: column;
+      height: 100% !important;
+      font-size: 1.125rem;
     }
     .nav-link {
       display: flex;
       align-items: center;
-      color: var(--grey-500);
+      color: #ffffff;
       padding: 1rem 0;
       padding-left: 2.5rem;
       text-transform: capitalize;
       transition: var(--transition);
-      &:nth-child(6) {
-        margin-top: 26.5rem !important;
+
+      &:nth-child(5) {
+        margin-top: auto;
       }
     }
     .nav-link:hover:not(.active) {
-      background: var(--grey-50);
+      background: var(--hover-color);
+      color: var(--primary-900);
       padding-left: 3rem;
-      color: var(--grey-900);
     }
     .icon {
       font-size: 1.5rem;
       margin-right: 1rem;
       display: grid;
       place-items: center;
-      transition: var(--transition);
     }
     .active {
       color: #ffffff;

@@ -2,14 +2,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding: 1rem;
-  background: var(--white);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
-  /* border-bottom: 5px solid ${(props) => props.color}; */
+  background: var(--white);
   header {
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
     color: var(--grey-300);
   }
   footer {
@@ -33,7 +29,8 @@ const Wrapper = styled.article`
   .count {
     display: block;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 2.25rem;
+    color: black;
     color: ${(props) => props.color};
   }
   .title {
@@ -42,11 +39,16 @@ const Wrapper = styled.article`
     letter-spacing: var(--letterSpacing);
     text-align: left;
     margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--black);
+    opacity: 0.7;
   }
   .icon {
-    /* width: 80px;
-    height: 80px; */
-    /* background: ${(props) => props.bcg}; */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* background: ${(props) => props.color}; */
+    background: var(--grey-50);
     border-radius: var(--borderRadius);
     display: flex;
     align-items: center;

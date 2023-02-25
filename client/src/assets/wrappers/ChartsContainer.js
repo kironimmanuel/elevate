@@ -4,10 +4,15 @@ const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: var(--shadow-3);
-  padding: 2rem;
+  padding: 3.5rem;
   border-radius: var(--radius);
   background: var(--white);
-
+  @media (min-width: 1200px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
   .left-chart {
     grid-column: 1 / span 1;
   }

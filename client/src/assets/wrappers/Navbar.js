@@ -1,19 +1,16 @@
 import styled from "styled-components";
 
 const Wrapper = styled.nav`
-  background: var(--white);
   height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
-
+  backdrop-filter: blur(15px);
   .logo {
     display: flex;
     align-items: center;
     width: 75px;
   }
-
   .nav-center {
     display: flex;
     width: 90vw;
@@ -26,6 +23,7 @@ const Wrapper = styled.nav`
       gap: 1rem;
       h5 {
         margin-bottom: 0;
+        font-weight: 600;
       }
     }
   }
@@ -56,7 +54,7 @@ const Wrapper = styled.nav`
   .toggle-btn {
     background: transparent;
     border-color: transparent;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: var(--primary-500);
     cursor: pointer;
     display: flex;
@@ -94,6 +92,7 @@ const Wrapper = styled.nav`
     display: none;
     margin: 0;
     font-size: 1.25rem;
+    font-weight: 600;
   }
 
   @media (min-width: 992px) {

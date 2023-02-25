@@ -22,7 +22,7 @@ const Wrapper = styled.article`
     height: 60px;
     display: grid;
     place-items: center;
-    background: var(--primary-800);
+    background: #666868;
     border-radius: var(--borderRadius);
     font-size: 1.5rem;
     font-weight: 700;
@@ -42,16 +42,16 @@ const Wrapper = styled.article`
     }
   }
   .pending {
-    background: #fdf4ce;
-    color: #a38233;
+    background: #fff4d8;
+    color: #ffc93c;
   }
   .interview {
-    background: #d1e8ff;
-    color: #647acb;
+    background: #f0ffe6;
+    color: #7dd87d;
   }
   .declined {
-    background: #faeded;
-    color: #804040;
+    background: #fceee8;
+    color: #fa7a7a;
   }
   .content {
     padding: 1rem 1.5rem;
@@ -100,15 +100,15 @@ const Wrapper = styled.article`
     height: 27px;
   }
   .edit-btn {
-    background: var(--grey-400);
+    background: var(--primary-500);
     margin-right: 0.5rem;
   }
   .delete-btn {
-    background: var(--grey-400);
+    background: var(--primary-500);
     margin-right: 0.5rem;
   }
   .archive-btn {
-    background: var(--grey-400);
+    background: var(--primary-500);
   }
   &:hover .actions {
     visibility: visible;

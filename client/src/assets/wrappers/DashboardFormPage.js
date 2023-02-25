@@ -42,10 +42,10 @@ const Wrapper = styled.section`
     }
   }
   .clear-btn {
-    background: var(--grey-500);
+    background: var(--primary-800);
   }
   .clear-btn:hover {
-    background: var(--grey-600);
+    background: var(--primary-600);
   }
   @media (min-width: 992px) {
     .form-center {

@@ -15,6 +15,7 @@ const Wrapper = styled.main`
     display: grid;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   h1 {
     font-weight: 700;
@@ -27,9 +28,18 @@ const Wrapper = styled.main`
   p {
     color: var(--grey-600);
     font-size: 1.1rem;
+    margin-top: -5.5rem;
+    font-weight: 600;
   }
   .main-img {
-    display: none;
+    margin-top: -7.5rem;
+  }
+  .landing-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
   @media (min-width: 992px) {
     .main-img {
@@ -46,6 +56,11 @@ const Wrapper = styled.main`
     }
     .text-container {
       margin-top: -5rem;
+    }
+    p {
+      color: var(--grey-600);
+      font-size: 1.1rem;
+      margin-top: -10.5rem;
     }
   }
 `;
