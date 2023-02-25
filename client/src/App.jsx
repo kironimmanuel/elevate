@@ -41,6 +41,7 @@ function App() {
         transition={Zoom}
         hideProgressBar
         closeOnClick
+        toastStyle={{ backgroundColor: "#ff8762" }}
       />
     </BrowserRouter>
   );
