@@ -7,12 +7,12 @@ const Wrapper = styled.section`
   padding: 3.5rem;
   border-radius: var(--radius);
   background: var(--white);
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-  }
+  } */
   .left-chart {
     grid-column: 1 / span 1;
   }
