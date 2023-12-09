@@ -12,11 +12,11 @@ const Landing = () => {
       </nav>
       <div className="container page">
         <div className="info">
-          <Fade direction="left" className="opacity-0" triggerOnce>
+          <Fade direction="left" triggerOnce>
             <img src={main} alt="job hunt" className="img main-img" />
           </Fade>
           <div className="text-container">
-            <Fade direction="right" className="opacity-0" triggerOnce>
+            <Fade direction="right" triggerOnce>
               <p>
                 Track and manage all your Job applications in one place - for
                 free! <br />
